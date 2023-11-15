@@ -89,6 +89,7 @@
     height: 460px;
     border: 1px solid rgba(17, 17, 17, 0.10);
     border-radius: 8px;
+    padding: 0px 20px;
 }
 
 .fa-pen-to-square {
@@ -164,11 +165,9 @@
     font-size: 22px;
 }
 
-
-
 .input-field {
     width: 50px;
-    background-color: #dcdada;
+    background-color: #f7f6f6;
     outline: none;
     border: none;
     padding: 5px 5px;
@@ -235,5 +234,32 @@ input::-webkit-inner-spin-button {
 @media only screen and (max-width:426px) {
     .geometry-parent {
         padding: 30px 20px;
+    }
+
+    .card-display-parent {
+        flex-direction: column;
+    }
+
+    .card-parent {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card {
+        width: auto;
+    }
+
+    .display-card {
+        width: auto;
+    }
+
+}
+
+@media only screen and (min-width:427px) and (max-width:768px) {
+    .card-display-parent {
+        flex-direction: column;
+    }
+
+    .card-parent {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
