@@ -59,3 +59,9 @@
 .blog-button:hover {
     background-color: #1C84FF;
 }
+
+@media only screen and (max-width:426px) {
+    .geometry-parent {
+        padding: 30px 20px;
+    }
+}
