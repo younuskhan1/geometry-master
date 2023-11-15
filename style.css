@@ -3,3 +3,59 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+.geometry-header {
+    background-color: rgba(16, 144, 216, 0.10);
+    width: auto;
+    height: 80px;
+    margin: 20px 20px;
+    border-radius: 5px;
+}
+
+.geometry-parent {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+}
+
+.interactive {
+    font-size: 25px;
+    padding-bottom: 3px;
+    color: rgba(17, 17, 17, 0.80);
+    font-weight: 700;
+}
+
+.geometry-master {
+    color: rgba(17, 17, 17, 0.60);
+    font-weight: 500;
+}
+
+.blog-button {
+    align-items: center;
+    background-color: #0276FF;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    font-family: "RM Neue", sans-serif;
+    font-size: 100%;
+    font-weight: 700;
+    line-height: 1.15;
+    padding: 8px 30px;
+    text-align: center;
+    text-transform: none;
+    transition: color .13s ease-in-out, background-color .13s ease-in-out, opacity .13s ease-in-out, box-shadow .13s ease-in-out;
+}
+
+.blog-button:active {
+    background-color: #006AE8;
+}
+
+.blog-button:hover {
+    background-color: #1C84FF;
+}
