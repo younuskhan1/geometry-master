@@ -16,12 +16,12 @@ for (let btn of buttons) {
         if (firstInputValueNumber < 0 || secondInputValueNumber < 0) {
             alert("Please provide me a positive numeric value.")
         } else if (isNaN(firstInputValueNumber) || isNaN(secondInputValueNumber)) {
-            alert("Do not give me text. Please provide me a positive numeric value.")
+            alert("Do not give me text or empty text ! Please provide me a positive numeric value.")
         } else {
             const li = document.createElement("li");
             li.classList.add("calculated-number");
             const count = calculatedArea.childElementCount;
-
+            //  reuseable common function is used in different places.....
             function setArea(name, area) {
                 li.innerHTML = `<p>${count + 1}. ${name} ${area} cm<sup>2</sup></p> 
                 <button type="button" class="convert-to-meter-button">meter<sup>2</sup></button>`;
