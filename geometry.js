@@ -53,10 +53,15 @@ for (let btn of buttons) {
 for (let card of cards) {
     card.addEventListener("mouseenter", function (event) {
 
-        // I caught the total card by using toElement property of event object. 
+        // I caught each whole card by using toElement property of event object.
+        // you will not be able to get the whole card by using target property of event 
+        // object. console.log(event.target); using this you can get card's image, 
+        // text, button, otherthings separately but I need the card wholly for that 
+        // reason I used toElement property of event object.
 
+        console.log(event);
         const targetCard = event.toElement;
-        targetCard.style.background = getRandomColor();
+        targetCard.style.backgroundColor = getRandomColor();
 
         function getRandomNumber(limitValue) {
             let randomNumber = Math.random();
