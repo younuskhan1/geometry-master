@@ -28,12 +28,19 @@ for (let btn of buttons) {
             const areaOfIndicatedShapeDecimal = areaOfIndicatedShape.toFixed(2);
             setArea(cardName, areaOfIndicatedShapeDecimal);
 
+        } else if (cardName === "Ellipse") {
+            const areaOfIndicatedShape = 3.1416 * firstInputValueNumber * secondInputValueNumber;
+            const areaOfIndicatedShapeDecimal = areaOfIndicatedShape.toFixed(2);
+            setArea(cardName, areaOfIndicatedShapeDecimal);
         } else {
             const areaOfIndicatedShape = firstInputValueNumber * secondInputValueNumber;
             const areaOfIndicatedShapeDecimal = areaOfIndicatedShape.toFixed(2);
             setArea(cardName, areaOfIndicatedShapeDecimal);
 
         }
-
     })
 }
+
+document.getElementById("blog-button").addEventListener("click", function () {
+    location.href = "blog.html";
+})

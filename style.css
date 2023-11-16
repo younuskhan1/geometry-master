@@ -277,6 +277,38 @@ input::-webkit-inner-spin-button {
     color: black;
 }
 
+/* -----------------blog html's css ------------------- */
+.blog-question {
+    padding: 30px 40px 0px;
+}
+
+.sub-answer {
+    padding: 10px 40px 10px;
+    line-height: 1.5em;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.sub-answer li {
+    padding: 0px 20px;
+    line-height: 1.5em;
+    font-size: 17px;
+    font-weight: 700;
+    list-style: none;
+    margin-top: 5px;
+}
+
+.blog-answer {
+    padding: 10px 40px;
+    line-height: 1.5em;
+    font-size: 17px;
+    text-align: justify;
+    font-weight: 700;
+}
+
+.heading-answer {
+    color: brown;
+}
 
 @media only screen and (min-width:769px) and (max-width:1024px) {
     .geometry-header {
