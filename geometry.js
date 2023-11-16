@@ -18,7 +18,8 @@ for (let btn of buttons) {
         const count = calculatedArea.childElementCount;
 
         function setArea(name, area) {
-            li.innerHTML = `${count + 1}. ${name} ${area} cm<sup>2</sup> <button type="button" class="convert-to-meter-button">meter<sup>2</sup></button>`;
+            li.innerHTML = `<p>${count + 1}. ${name} ${area} cm<sup>2</sup></p> 
+            <button type="button" class="convert-to-meter-button">meter<sup>2</sup></button>`;
             calculatedArea.appendChild(li);
         }
 

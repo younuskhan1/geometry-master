@@ -89,7 +89,7 @@
     height: 460px;
     border: 1px solid rgba(17, 17, 17, 0.10);
     border-radius: 8px;
-    padding: 0px 0px 0px 10px;
+    padding: 0px 10px;
 }
 
 .fa-pen-to-square {
@@ -230,12 +230,18 @@ input::-webkit-inner-spin-button {
 }
 
 .calculated-number {
+    display: flex;
+    justify-content: space-between;
     list-style: none;
     padding-top: 20px;
     font-size: large;
     font-weight: 900;
+    width: 100%;
 }
 
+/* #calculated-area{
+    padding: ;
+} */
 .convert-to-meter-button {
     align-items: center;
     background-color: deeppink;
