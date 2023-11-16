@@ -1,4 +1,5 @@
 const buttons = document.getElementsByClassName("calcutale-button");
+const cards = document.getElementsByClassName("card");
 
 const calculatedArea = document.getElementById("calculated-area");
 
@@ -48,6 +49,31 @@ for (let btn of buttons) {
 
     })
 }
+
+for (let card of cards) {
+    card.addEventListener("mouseenter", function (event) {
+
+        // I caught the total card by using toElement property of event object. 
+
+        const targetCard = event.toElement;
+        targetCard.style.background = getRandomColor();
+
+        function getRandomNumber(limitValue) {
+            let randomNumber = Math.random();
+            randomNumber = randomNumber * limitValue;
+            randomNumber = Math.floor(randomNumber);
+            return randomNumber;
+        }
+        function getRandomColor() {
+            const limitValue = 256;
+            let red = getRandomNumber(limitValue);
+            let green = getRandomNumber(limitValue);
+            let blue = getRandomNumber(limitValue);
+            return `rgb( ${red}, ${green}, ${blue})`;
+        }
+    })
+}
+
 
 document.getElementById("blog-button").addEventListener("click", function () {
     location.href = "blog.html";
