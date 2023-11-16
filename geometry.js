@@ -14,19 +14,23 @@ for (let btn of buttons) {
         const secondInputValueNumber = parseFloat(secondInputValue);
 
         const li = document.createElement("li");
+        li.classList.add("calculated-number");
+        const count = calculatedArea.childElementCount;
 
         function setArea(name, area) {
-            li.innerText = `${name} ${area}`;
+            li.innerHTML = `${count + 1}. ${name} ${area} cm<sup>2</sup> <button type="button" class="convert-to-meter-button">meter<sup>2</sup></button>`;
             calculatedArea.appendChild(li);
         }
 
         if (cardName === "Triangle" || cardName === "Rhombus" || cardName === "Pentagon") {
             const areaOfIndicatedShape = .5 * firstInputValueNumber * secondInputValueNumber;
-            setArea(cardName, areaOfIndicatedShape);
+            const areaOfIndicatedShapeDecimal = areaOfIndicatedShape.toFixed(2);
+            setArea(cardName, areaOfIndicatedShapeDecimal);
 
         } else {
             const areaOfIndicatedShape = firstInputValueNumber * secondInputValueNumber;
-            setArea(cardName, areaOfIndicatedShape);
+            const areaOfIndicatedShapeDecimal = areaOfIndicatedShape.toFixed(2);
+            setArea(cardName, areaOfIndicatedShapeDecimal);
 
         }
 
