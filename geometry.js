@@ -40,6 +40,22 @@ for (let btn of buttons) {
                         // with new value.
                         li.innerHTML = `<p>${count + 1}. <span>${name}</span> <span>${meterDecimal}</span> m<sup>2</sup></p> 
                         <button type="button" class="meter-button">cm<sup>2</sup></button>`;
+
+                        const centimeterButtons = document.getElementsByClassName("meter-button");
+                        for (let centiButton of centimeterButtons) {
+                            centiButton.addEventListener("click", function (event) {
+                                event.stopImmediatePropagation();
+                                const name = event.target.parentNode.childNodes[0].childNodes[1].innerText;
+                                const centiMeter = event.target.parentNode.childNodes[0].childNodes[3].innerText;
+                                const centimeterInNumber = parseFloat(centiMeter);
+                                // console.log(name, centiMeter);
+                                const meter = centimeterInNumber * 100;
+                                const centimeterDeci = meter.toFixed(2);
+
+                                li.innerHTML = `<p>${count + 1}. <span>${name}</span> <span>${centimeterDeci}</span> cm<sup>2</sup></p> 
+                                <button type="button" class="centimeter-button">meter<sup>2</sup></button>`;
+                            })
+                        }
                     })
                 }
             }
