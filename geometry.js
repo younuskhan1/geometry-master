@@ -32,11 +32,13 @@ for (let btn of buttons) {
                         event.stopImmediatePropagation();
                         const name = event.target.parentNode.childNodes[0].childNodes[1].innerText;
                         const centimeter = event.target.parentNode.childNodes[0].childNodes[3].innerText;
-                        console.log(name, centimeter);
+                        // console.log(name, centimeter);
                         const centimeterInNumber = parseFloat(centimeter);
                         const meter = centimeterInNumber / 100;
-
-                        li.innerHTML = `<p>${count + 1}. <span>${name}</span> <span>${meter}</span> m<sup>2</sup></p> 
+                        const meterDecimal = meter.toFixed(2);
+                        // It does not need to append the li to calculatedArea newly. Just update the data
+                        // with new value.
+                        li.innerHTML = `<p>${count + 1}. <span>${name}</span> <span>${meterDecimal}</span> m<sup>2</sup></p> 
                         <button type="button" class="meter-button">cm<sup>2</sup></button>`;
                     })
                 }
