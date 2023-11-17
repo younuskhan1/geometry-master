@@ -79,6 +79,31 @@ for (let btn of buttons) {
     })
 }
 
+const tickCheckMarks = document.getElementsByClassName("fa-square-check");
+for (let tickCheckMark of tickCheckMarks) {
+    tickCheckMark.addEventListener("click", function (event) {
+        const firstInput = event.target.parentNode.parentNode.childNodes[1].childNodes[0].value;
+        const secondInput = event.target.parentNode.parentNode.childNodes[1].childNodes[4].value;
+        // console.log(firstInput);
+        // console.log(secondInput);
+        const firstDimension = event.target.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].childNodes[3];
+        const secondDimension = event.target.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].childNodes[9];
+        // console.log(firstDimension);
+        // console.log(secondDimension);
+        firstDimension.innerText = firstInput;
+        secondDimension.innerText = secondInput;
+        const vanish = event.target.parentNode.parentNode.childNodes[1];
+        vanish.style.visibility = "hidden";
+
+    })
+}
+
+
+
+
+
+
+
 for (let card of cards) {
     card.addEventListener("mouseenter", function (event) {
 
