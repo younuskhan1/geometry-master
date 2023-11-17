@@ -12,7 +12,7 @@ for (let btn of buttons) {
         if (firstInputValueNumber < 0 || secondInputValueNumber < 0) {
             alert("Please provide me a positive numeric value.")
         } else if (isNaN(firstInputValueNumber) || isNaN(secondInputValueNumber)) {
-            alert("Do not give me text or empty text ! Please provide me a positive numeric value.")
+            alert("Do not give me text or empty text ! Please provide me a positive numeric value.");
         } else {
             const li = document.createElement("li");
             li.classList.add("calculated-number");
@@ -83,26 +83,38 @@ const tickCheckMarks = document.getElementsByClassName("fa-square-check");
 for (let tickCheckMark of tickCheckMarks) {
     tickCheckMark.addEventListener("click", function (event) {
         const firstInput = event.target.parentNode.parentNode.childNodes[1].childNodes[0].value;
+        const firstInputNumber = parseFloat(firstInput);
         const secondInput = event.target.parentNode.parentNode.childNodes[1].childNodes[4].value;
-        // console.log(firstInput);
-        // console.log(secondInput);
+        const secondInputNumber = parseFloat(secondInput);
+        // console.log(firstInputNumber);
+        // console.log(secondInputNumber);
         const firstDimension = event.target.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].childNodes[3];
         const secondDimension = event.target.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].childNodes[9];
         // console.log(firstDimension);
         // console.log(secondDimension);
-        firstDimension.innerText = firstInput;
-        secondDimension.innerText = secondInput;
-        const vanish = event.target.parentNode.parentNode.childNodes[1];
-        vanish.style.visibility = "hidden";
+
+        if (firstInputNumber < 0 || secondInputNumber < 0) {
+            alert("Please fill up the input fields with positive numeric value.")
+        } else if (isNaN(firstInputNumber) || isNaN(secondInputNumber)) {
+            alert("Firstly, you have to fill up the input fields with positive numeric values.")
+        } else {
+            firstDimension.innerText = firstInputNumber;
+            secondDimension.innerText = secondInputNumber;
+            const vanish = event.target.parentNode.parentNode.childNodes[1];
+            vanish.style.visibility = "hidden";
+
+        }
 
     })
 }
 
-
-
-
-
-
+const editPens = document.getElementsByClassName("fa-pen-to-square");
+for (let editPen of editPens) {
+    editPen.addEventListener("click", function (event) {
+        const inputFieldsVisible = event.target.parentNode.parentNode.parentNode.childNodes[9].childNodes[1];
+        inputFieldsVisible.style.visibility = "visible"
+    })
+}
 
 for (let card of cards) {
     card.addEventListener("mouseenter", function (event) {
