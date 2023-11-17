@@ -1,19 +1,14 @@
 const buttons = document.getElementsByClassName("calcutale-button");
 const cards = document.getElementsByClassName("card");
-
 const calculatedArea = document.getElementById("calculated-area");
-
 
 for (let btn of buttons) {
     btn.addEventListener("click", function (event) {
         const cardName = event.target.parentNode.parentNode.childNodes[3].innerText;
-
         const firstInputValue = event.target.parentNode.parentNode.childNodes[9].childNodes[1].childNodes[0].value;
         const firstInputValueNumber = parseFloat(firstInputValue);
-
         const secondInputValue = event.target.parentNode.parentNode.childNodes[9].childNodes[1].childNodes[4].value;
         const secondInputValueNumber = parseFloat(secondInputValue);
-
         if (firstInputValueNumber < 0 || secondInputValueNumber < 0) {
             alert("Please provide me a positive numeric value.")
         } else if (isNaN(firstInputValueNumber) || isNaN(secondInputValueNumber)) {
@@ -22,11 +17,29 @@ for (let btn of buttons) {
             const li = document.createElement("li");
             li.classList.add("calculated-number");
             const count = calculatedArea.childElementCount;
-            //  reuseable common function is used in different places.....
+            //  reuseable common function is used in different places...
+
             function setArea(name, area) {
-                li.innerHTML = `<p>${count + 1}. ${name} ${area} cm<sup>2</sup></p> 
+                li.innerHTML = `<p>${count + 1}. <span>${name}</span> <span>${area}</span> cm<sup>2</sup></p> 
                 <button type="button" class="convert-to-meter-button">meter<sup>2</sup></button>`;
                 calculatedArea.appendChild(li);
+
+                const meterButtons = document.getElementsByClassName("convert-to-meter-button");
+
+                for (let meterButton of meterButtons) {
+
+                    meterButton.addEventListener("click", function (event) {
+                        event.stopImmediatePropagation();
+                        const name = event.target.parentNode.childNodes[0].childNodes[1].innerText;
+                        const centimeter = event.target.parentNode.childNodes[0].childNodes[3].innerText;
+                        console.log(name, centimeter);
+                        const centimeterInNumber = parseFloat(centimeter);
+                        const meter = centimeterInNumber / 100;
+
+                        li.innerHTML = `<p>${count + 1}. <span>${name}</span> <span>${meter}</span> m<sup>2</sup></p> 
+                        <button type="button" class="meter-button">cm<sup>2</sup></button>`;
+                    })
+                }
             }
 
             if (cardName === "Triangle" || cardName === "Rhombus" || cardName === "Pentagon") {
@@ -44,9 +57,7 @@ for (let btn of buttons) {
                 setArea(cardName, areaOfIndicatedShapeDecimal);
 
             }
-
         }
-
     })
 }
 
@@ -59,7 +70,7 @@ for (let card of cards) {
         // text, button, otherthings separately but I need the card wholly for that 
         // reason I used toElement property of event object.
 
-        console.log(event);
+        // console.log(event);
         const targetCard = event.toElement;
         targetCard.style.backgroundColor = getRandomColor();
 
@@ -78,7 +89,6 @@ for (let card of cards) {
         }
     })
 }
-
 
 document.getElementById("blog-button").addEventListener("click", function () {
     location.href = "blog.html";
